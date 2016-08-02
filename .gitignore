@@ -1,0 +1,16 @@
+.DS_Store
+*.sw*
+*~
+
+*.sublime-workspace
+.idea/
+
+build/
+dist/
+bower_components/
+node_modules/
+
+cookies.txt
+npm-debug.log
+
+src/js/key.json

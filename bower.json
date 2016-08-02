@@ -1,0 +1,22 @@
+{
+  "name": "election-dash-strand",
+  "version": "1.0.0",
+  "homepage": "https://github.com/jeremysklarsky/election-dash-strand",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:jeremysklarsky/election-dash-strand.git"
+  },
+  "author": "Jeremy Sklarsky",
+  "description": "Election Dashboard",
+  "dependencies": {
+    "strand": "4.0.4"
+  },
+  "devDependencies": {
+    "web-component-tester": "4.3.1"
+  },
+  "resolutions": {
+    "webcomponentsjs": "0.7.7",
+    "async": "^1.5.0",
+    "chai": "^3.2.0"
+  }
+}

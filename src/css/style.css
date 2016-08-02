@@ -1,0 +1,29 @@
+body {
+  background-color: #fff;
+  color: #333;
+  font: 13px "Arimo", sans-serif;
+  margin: 0;
+}
+
+body,
+html {
+  height: 100%;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.loader {
+  text-align: center;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.loading-spinner {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
