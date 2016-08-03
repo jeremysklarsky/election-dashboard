@@ -1,7 +1,23 @@
 <dom-module id="election-dash-538">
   <link href="election-dash-538.css" rel="import" type="css" />
   <template>
-    <strand-header size="medium" unresolved>FiveThirtyEight</strand-header>
+    <div class="content">
+      <strand-header size="medium" unresolved>FiveThirtyEight</strand-header>
+      <strand-grid fitparent id="grid" style="min-height: 150px;">
+        <strand-grid-column field="candidate">Candidate</strand-grid-column>
+
+        <strand-grid-column field="polls-plus">Polls-Plus</strand-grid-column>
+<!--         <strand-grid-column field="plus-change"></strand-grid-column>
+ -->
+        <strand-grid-column field="polls-only">Polls-Only</strand-grid-column>
+        <!-- <strand-grid-column field="polls-change"></strand-grid-column> -->
+
+        <strand-grid-column field="now-cast">Now Cast</strand-grid-column>
+        <!-- <strand-grid-column field="now-change"></strand-grid-column> -->
+
+      </strand-grid>    
+    </div>
+    <strand-sync id="forecast" endpoint="https://projects.fivethirtyeight.com/2016-election-forecast/US.json"></strand-sync>
   </template>
 </dom-module>
 <script src="election-dash-538.js"></script>

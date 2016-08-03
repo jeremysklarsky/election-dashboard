@@ -1,0 +1,16 @@
+<dom-module id="election-dash-twitter">
+  <link href="election-dash-twitter.css" rel="import" type="css" />
+  <template>
+    <strand-header size="medium" unresolved>Twitter Feeds</strand-header>
+    <strand-tabs tab-bar-offset="15">
+      <template is="dom-repeat" items="{{users}}">
+        <strand-tab tab-label="{{item.name}}">
+          <div class="tab-content">
+            <a class="twitter-timeline" data-lang="en" data-width="500" data-height="600" href="https://twitter.com/{{item.handle}}">Tweets by {{item.handle}}</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+        </strand-tab>      
+      </template>
+    </strand-tabs>
+  </template>
+</dom-module>
+<script src="election-dash-twitter.js"></script>

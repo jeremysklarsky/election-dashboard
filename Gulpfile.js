@@ -39,7 +39,7 @@ gulp.task('build', function() {
   var views = gulp.src([SRC + 'views/**/*.html', '!' + SRC +'**/example.html'])
     .pipe(gulp.dest(BUILD));
 
-  var comps = gulp.src(SRC + 'election-dash-manager.html')
+  var comps = gulp.src(SRC + 'election-dashboard.html')
     .pipe(gulp.dest(BUILD));
 
   return merge(src, test, ico, views, comps);
@@ -61,7 +61,7 @@ gulp.task('dist', function() {
   var views = gulp.src([SRC + 'views/**/*.html', '!' + SRC +'views/**/example.html'])
     .pipe(gulp.dest(DIST));
 
-  var comps = gulp.src(SRC + 'election-dash-manager.html')
+  var comps = gulp.src(SRC + 'election-dashboard.html')
     .pipe(vulcanize({
       abspath: '',
       inlineScripts:true,

@@ -1,7 +1,20 @@
 <dom-module id="election-dash-manager">
   <link href="election-dash-manager.css" rel="import" type="css" />
   <template>
-    <strand-header size="large" unresolved>Election Nerd</strand-header>
+    <strand-header size="large" unresolved>Election Nerdboard</strand-header>
+    <div class='app'>
+      <div class='column left'>
+        <election-dash-538></election-dash-538>
+        <election-dash-huffpollster></election-dash-huffpollster>
+        <election-dash-predictwise></election-dash-predictwise>        
+        <election-dash-polls></election-dash-polls>                
+      </div>
+
+      <div class='column right'>
+        <election-dash-twitter></election-dash-twitter>
+      </div>  
+  
+    </div>
   </template>
 </dom-module>
 <script src="election-dash-manager.js"></script>

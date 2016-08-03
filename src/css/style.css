@@ -27,3 +27,41 @@ a {
   top: 50%;
   transform: translateY(-50%);
 }
+
+.app {
+  padding: 15px;
+}
+
+election-dash-538 {
+  float: left;
+  width: 100%;
+}
+
+election-dash-polls {
+  float: left;
+  width: 100%;
+}
+
+election-dash-huffpollster, election-dash-predictwise {
+  float: left;
+  width: 50%;
+}
+
+.column {
+  width: 50%;
+  display: inline-block;
+}
+
+.column.left {
+  float: left;
+}
+
+.column.right {
+  float: right;
+}
+
+.rcp-frame {
+    top      : -100px;
+    width    : 100%;
+    height   : 600px;
+}  
