@@ -53,7 +53,9 @@
         }).value;
       }
 
-      $grid.set('data', polls);
+      $grid.set('data', _.sortBy(polls, function(poll){
+        return parseFloat(poll.current);
+      }).reverse());
 
     }
 

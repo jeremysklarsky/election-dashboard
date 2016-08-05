@@ -33,7 +33,7 @@
     if (choice) {
       return choice.pct;
     } else {
-      return '';
+      return '--';
     }
   }  
 
@@ -45,7 +45,7 @@
       grid.set('data', []);
       this.$.recentpolls.get().then(function(data){
         var polls = _.sortBy(data.response, 'startDate').reverse();
-        for (var i = 0; i < 25; i++) {
+        for (var i = 0; i < 50; i++) {
           var obj = {
             state: polls[i].state,
             pollster: polls[i].pollster.slice(0,15),
