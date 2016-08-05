@@ -1,0 +1,21 @@
+<dom-module id="election-dash-poll-tabs">
+  <link href="election-dash-poll-tabs.css" rel="import" type="css" />
+  <template>
+    <div class="content">
+      <strand-header size="medium" unresolved>Polling Averages</strand-header>
+      <strand-tabs tab-bar-offset="15">
+        <strand-tab tab-label="Recent Polls">
+          <election-dash-polls></election-dash-polls>
+        </strand-tab>
+
+        <strand-tab tab-label="National">
+          <election-dash-huffpollster></election-dash-huffpollster>
+        </strand-tab>
+        <strand-tab tab-label="Battlegrounds">
+          <election-dash-battlegrounds></election-dash-battlegrounds>
+        </strand-tab>
+      </strand-tabs>
+    </div>
+  </template>
+</dom-module>
+<script src="election-dash-poll-tabs.js"></script>

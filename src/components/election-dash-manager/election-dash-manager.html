@@ -5,9 +5,7 @@
     <div class='app'>
       <div class='column left'>
         <election-dash-538></election-dash-538>
-        <election-dash-huffpollster></election-dash-huffpollster>
-        <election-dash-predictwise></election-dash-predictwise>        
-        <election-dash-polls></election-dash-polls>                
+        <election-dash-poll-tabs></election-dash-poll-tabs>
       </div>
 
       <div class='column right'>
@@ -17,4 +15,9 @@
     </div>
   </template>
 </dom-module>
+<script>
+  window.pollsterPoll = function(incoming_data){
+    console.log(incoming_data);
+  };
+</script>
 <script src="election-dash-manager.js"></script>

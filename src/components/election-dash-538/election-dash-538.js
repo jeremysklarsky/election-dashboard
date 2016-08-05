@@ -38,18 +38,22 @@
         var plus = getData(candidate, 'plus', data);
         var polls = getData(candidate, 'polls', data);
         var now = getData(candidate, 'now', data);
-        var plusDelta = getDelta(candidate, 'plus', plus, data);
-        var pollsDelta = getDelta(candidate, 'polls', polls, data);
-        var nowDelta = getDelta(candidate, 'now', now, data);
+        var plusSeven = getDelta(candidate, 'plus', plus, data, 7);
+        var pollsSeven = getDelta(candidate, 'polls', polls, data, 7);
+        var nowSeven = getDelta(candidate, 'now', now, data, 7);
+        var plusThree = getDelta(candidate, 'plus', plus, data, 3);
+        var pollsThree = getDelta(candidate, 'polls', polls, data, 3);
+        var nowThree = getDelta(candidate, 'now', now, data, 3);
+
         var candidateObj = {
           'candidate': candidate,
-          'polls-plus': displayPercent(plus) + ' | ' + displayDelta(plusDelta),
+          'polls-plus': displayPercent(plus) + ' / ' + displayDelta(plusThree) + ' / ' + displayDelta(plusSeven),
           // 'plus-change': displayDelta(plusDelta),
 
-          'polls-only': displayPercent(polls) + ' | ' + displayDelta(pollsDelta),
+          'polls-only': displayPercent(polls) + ' / ' + displayDelta(pollsThree) + ' / ' + displayDelta(pollsSeven),
           // 'polls-change': displayDelta(pollsDelta),            
 
-          'now-cast': displayPercent(now) + ' | ' + displayDelta(nowDelta),
+          'now-cast': displayPercent(now) + ' / ' + displayDelta(nowThree) + ' / ' + displayDelta(nowSeven),
           // 'now-change': displayDelta(nowDelta),
         };
 
@@ -57,8 +61,8 @@
 
       });
 
-      function getDelta(candidate, forecast, todays, data) {
-        var lastWeek = moment().subtract(7, 'days').format('YYYY-MM-DD');
+      function getDelta(candidate, forecast, todays, data, days) {
+        var lastWeek = moment().subtract(days, 'days').format('YYYY-MM-DD');
         var oldForecast = _.find(data, function(cast) { 
           return (cast.date === lastWeek) && cast.candidate === candidate;
         }).models[forecast].winprob;

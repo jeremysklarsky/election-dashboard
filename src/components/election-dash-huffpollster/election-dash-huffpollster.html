@@ -2,10 +2,11 @@
   <link href="election-dash-huffpollster.css" rel="import" type="css" />
   <template>
     <div class="content">
-      <strand-header size="medium" unresolved>Huffington Pollster: Poll Averages</strand-header>
-      <strand-grid id="grid" style="min-height:150px;padding-bottom:15px;">
-        <strand-grid-column field="candidate">Candidate</strand-grid-column>
-        <strand-grid-column field="percent">Percent</strand-grid-column>
+      <strand-grid id="grid" class="polling-grid">
+        <strand-grid-column width="25%" field="candidate">Candidate</strand-grid-column>
+        <strand-grid-column width="25%" field="current">Current</strand-grid-column>
+        <strand-grid-column width="25%" field="three">Last 3 days</strand-grid-column>
+        <strand-grid-column width="25%" field="week">Last Week</strand-grid-column>
       </strand-grid>    
     </div>
   </template>
