@@ -1,0 +1,15 @@
+<script type="text/javascript">
+(function (scope) {
+
+  // default rules for common cases:
+  scope.displayPercent = function (percent) {
+    return percent.toFixed(2) + "%";
+  };
+
+  scope.displayDelta = function(percent) {
+    var sign = percent >= 0 ? '+' : '';
+    return sign + this.displayPercent(percent);
+  };
+
+})(window.Utils = window.Utils || {});
+</script>

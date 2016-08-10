@@ -110,6 +110,10 @@
       obj.isClintonUp = isClintonUp(obj);
       obj.spread = findSpread(obj) + '%';
       this.$.grid.push('data', obj);
+
+      if (this.$.grid.data.length === this.states.length) {
+        this.$.grid.set('data', sortedData(this.$.grid.data));
+      }
     }
 
   });

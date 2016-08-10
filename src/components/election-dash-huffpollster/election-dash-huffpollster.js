@@ -3,15 +3,6 @@
 (function () {
   'use strict';
 
-  function displayPercent(percent) {
-    return percent.toFixed(2) + "%";
-  }
-
-  function displayDelta(percent) {
-    var sign = percent >= 0 ? '+' : '';
-    return sign + displayPercent(percent);
-  }
-
   Polymer({
     is: 'election-dash-huffpollster',
 
@@ -40,9 +31,9 @@
         var lastWeeksAvg = findByCandidate(lastWeek, candidate);
         polls.push({
           candidate: candidate,
-          current: displayPercent(todaysAvg),
-          three: displayDelta(todaysAvg - threeDaysAvg), 
-          week: displayDelta(todaysAvg - lastWeeksAvg)
+          current: Utils.displayPercent(todaysAvg),
+          three: Utils.displayDelta(todaysAvg - threeDaysAvg), 
+          week: Utils.displayDelta(todaysAvg - lastWeeksAvg)
         });
 
       });

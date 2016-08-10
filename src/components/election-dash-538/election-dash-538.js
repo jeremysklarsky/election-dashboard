@@ -3,15 +3,6 @@
 (function () {
   'use strict';
 
-  function displayPercent(percent) {
-    return percent.toFixed(2) + "%";
-  }
-
-  function displayDelta(percent) {
-    var sign = percent >= 0 ? '+' : '';
-    return sign + displayPercent(percent);
-  }
-
   Polymer({
     is: 'election-dash-538',
 
@@ -47,14 +38,14 @@
 
         var candidateObj = {
           'candidate': candidate,
-          'polls-plus': displayPercent(plus) + ' / ' + displayDelta(plusThree) + ' / ' + displayDelta(plusSeven),
-          // 'plus-change': displayDelta(plusDelta),
+          'polls-plus': Utils.displayPercent(plus) + ' / ' + Utils.displayDelta(plusThree) + ' / ' + Utils.displayDelta(plusSeven),
+          // 'plus-change': Utils.displayDelta(plusDelta),
 
-          'polls-only': displayPercent(polls) + ' / ' + displayDelta(pollsThree) + ' / ' + displayDelta(pollsSeven),
-          // 'polls-change': displayDelta(pollsDelta),            
+          'polls-only': Utils.displayPercent(polls) + ' / ' + Utils.displayDelta(pollsThree) + ' / ' + Utils.displayDelta(pollsSeven),
+          // 'polls-change': Utils.displayDelta(pollsDelta),            
 
-          'now-cast': displayPercent(now) + ' / ' + displayDelta(nowThree) + ' / ' + displayDelta(nowSeven),
-          // 'now-change': displayDelta(nowDelta),
+          'now-cast': Utils.displayPercent(now) + ' / ' + Utils.displayDelta(nowThree) + ' / ' + Utils.displayDelta(nowSeven),
+          // 'now-change': Utils.displayDelta(nowDelta),
         };
 
         forecasts.push(candidateObj);

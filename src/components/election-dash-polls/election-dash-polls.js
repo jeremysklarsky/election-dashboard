@@ -13,10 +13,6 @@
     return polls.clinton >= polls.trump;
   }
 
-  function displayPercent(percent) {
-    return percent.toFixed(2) + "%";
-  }
-
   function formatDates(start, end) {
     var format = 'MM/DD';
     var startDate = moment(start).format(format);
