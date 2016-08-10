@@ -2,14 +2,16 @@
   <link href="election-dash-polls.css" rel="import" type="css" />
   <template>
     <div class="content">
-      <strand-grid id="grid" class="polling-grid" style="height: 400px;">
-        <strand-grid-column width="13%" field="state">State</strand-grid-column>
+      <strand-grid id="grid" class="polling-grid"  style="height: 400px;">
+        <strand-grid-column width="10%" field="state">State</strand-grid-column>
         <strand-grid-column width="18%" field="pollster">Pollster</strand-grid-column>
         <strand-grid-column width="15%" field="dates">Date</strand-grid-column>
         <strand-grid-column width="10%" field="clinton">Clinton</strand-grid-column>
         <strand-grid-column width="10%" field="trump">Trump</strand-grid-column>
         <strand-grid-column width="10%" field="johnson">Johnson</strand-grid-column>
-        <strand-grid-column width="24%" field="spread">Spread</strand-grid-column>
+        <strand-grid-column width="14%" field="spread">Spread</strand-grid-column>
+        <strand-grid-column width="6%" field="icon"></strand-grid-column>
+
         <template preserve-content>
           <strand-grid-item model="{{model}}" scope="{{scope}}">
             <div field="spread">
@@ -21,6 +23,12 @@
                 <div class="gop">{{model.spread}}</div>
               </template>
             </div>
+
+            <div field="icon">
+              <template is="dom-if" if="{{model.national}}">
+                <img src="img/usa.jpg" style="height:auto;width: 23px;">
+              </template>
+            </div>            
           </strand-grid-item>
         </template>        
       </strand-grid>    

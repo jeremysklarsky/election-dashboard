@@ -65,7 +65,7 @@
 
     ready: function() {
       var self = this;
-
+      var fetches = [];
       this.$.grid.set('data', []);
 
       _.each(this.states, function(state){
@@ -110,8 +110,6 @@
       obj.isClintonUp = isClintonUp(obj);
       obj.spread = findSpread(obj) + '%';
       this.$.grid.push('data', obj);
-
-      this.$.grid.set('data', sortedData(this.$.grid.data));
     }
 
   });

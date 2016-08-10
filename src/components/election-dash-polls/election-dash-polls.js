@@ -44,7 +44,7 @@
       var grid = this.$.grid;
       grid.set('data', []);
       this.$.recentpolls.get().then(function(data){
-        var polls = _.sortBy(data.response, 'startDate').reverse();
+        var polls = data.response;
         for (var i = 0; i < 50; i++) {
           var obj = {
             state: polls[i].state,

@@ -2,22 +2,32 @@
   <link href="election-dash-battlegrounds.css" rel="import" type="css" />
   <template>
 
-    <strand-grid id="grid" sort-order="1"  class="polling-grid">
-      <strand-grid-column width="23%" field="state">State</strand-grid-column>
-      <strand-grid-column width="27%" field="Clinton">Clinton</strand-grid-column>
-      <strand-grid-column width="20%" field="Trump">Trump</strand-grid-column>
-      <strand-grid-column width="30%" field="spread">spread</strand-grid-column>
-      <template preserve-content>
-        <strand-grid-item model="{{model}}" scope="{{scope}}">
-          <div field="spread">
-            <template is="dom-if" if="{{model.isClintonUp}}">
-              <div class="dem">{{model.spread}}</div>
-            </template>
-          </div>
-        </strand-grid-item>
-      </template>
+  <strand-tabs tab-bar-offset="15">
+    <strand-tab tab-label="Polls">
+      <strand-grid id="grid" class="polling-grid">
+        <strand-grid-column width="15%" field="state">State</strand-grid-column>
+        <strand-grid-column width="27%" field="Clinton">Clinton</strand-grid-column>
+        <strand-grid-column width="20%" field="Trump">Trump</strand-grid-column>
+        <strand-grid-column width="30%" field="spread">spread</strand-grid-column>
+        <template preserve-content>
+          <strand-grid-item model="{{model}}" scope="{{scope}}">
+            <div field="spread">
+              <template is="dom-if" if="{{model.isClintonUp}}">
+                <div class="dem">{{model.spread}}</div>
+              </template>
+            </div>
+          </strand-grid-item>
+        </template>
 
-    </strand-grid>
+      </strand-grid>    
+    </strand-tab>
+
+    <strand-tab tab-label="Map">
+      <strand-header>Coming soon...</strand-header>
+    </strand-tab>
+  </strand-tabs>
+
+
 
   </template>
 </dom-module>

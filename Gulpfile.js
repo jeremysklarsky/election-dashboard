@@ -29,6 +29,8 @@ gulp.task('clean', function() {
 gulp.task('build', function() {
   var src = gulp.src([SRC + '+(components|css|js)/**/*.+(html|js|json|css)', '!' + SRC +'**/example.html'])
     .pipe(gulp.dest(BUILD));
+  var img = gulp.src([SRC + 'img/*.*', '!' + SRC +'**/favicon.ico'])
+    .pipe(gulp.dest(BUILD + 'img/'));    
 
   var test = gulp.src([TEST + '**/*.+(html|js)'])
     .pipe(gulp.dest(BUILD + 'test'));
@@ -42,7 +44,7 @@ gulp.task('build', function() {
   var comps = gulp.src(SRC + 'election-dashboard.html')
     .pipe(gulp.dest(BUILD));
 
-  return merge(src, test, ico, views, comps);
+  return merge(src, img, test, ico, views, comps);
 });
 
 gulp.task('dist', function() {
