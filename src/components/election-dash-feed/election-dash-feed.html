@@ -1,0 +1,18 @@
+<link rel="import" href="../shared/utils.html"/>
+
+<dom-module id="election-dash-feed">
+  <link href="election-dash-feed.css" rel="import" type="css" />
+  <template>
+    <div class="content">
+      <strand-scroll-panel id="panel">
+        <template is="dom-repeat" items="{{articles}}">
+          <election-dash-article model="{{item}}"></election-dash-article>
+        </template>
+      </strand-scroll-panel>
+    </div>
+    <strand-sync id="feed" endpoint="https://rss2json.com/api.json?rss_url=http%3A%2F%2Ffivethirtyeight.com%2Fall%2Ffeed"></strand-sync>
+  </template>
+</dom-module>
+<script src="election-dash-feed.js"></script>
+
+
