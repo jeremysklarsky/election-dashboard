@@ -6,10 +6,10 @@
       <strand-list-item on-click="_click" id="article_{{model.index}}" class='title'>
         <div class='article left'>
           <div class="title">{{model.title}}</div>
-          <div class="date">{{model.date}}</div>
+          <div class="date">{{formattedDate}}</div>
         </div>
         <div class="article right">  
-          <div class="author">{{model.author}}</div>
+          <div class="author">{{formattedAuthor}}</div>
         </div>
       </strand-list-item>
       <strand-drawer id="drawer_{{model.index}}" expanded="{{expanded}}" opened-label="Hide">
