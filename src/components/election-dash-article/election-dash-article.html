@@ -13,9 +13,9 @@
         </div>
       </strand-list-item>
       <strand-drawer id="drawer_{{model.index}}" expanded="{{expanded}}" opened-label="Hide">
-        <div class="container">
-          <a href="{{model.link}}" target="_blank">Link</a>
-          {{model.description}}
+        <div class="article fulltext">
+          {{formattedDescription}} 
+          <a href="{{model.link}}" target="_blank">Link to full article</a>
         </div>
       </strand-drawer>      
     </div>

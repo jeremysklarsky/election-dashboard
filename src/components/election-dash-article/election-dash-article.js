@@ -18,6 +18,11 @@
       this.formattedAuthor = this.model.author.length > 22 ?
         this.model.author.substring(0,19) + '...' :
         this.model.author.substring(0,19);
+      this.formattedDescription = this._formatArticle(this.model.description);
+    },
+
+    _formatArticle: function(description) {
+      return description.split('[…]')[0].trim() + '...';
     },
 
     _click: function() {

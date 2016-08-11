@@ -25,7 +25,7 @@
             author: item.author,
             link: item.link,
             thumbnail: item.thumbnail,
-            description: item.description.substring(0,300) + '...',
+            description: item.description,
             date: item.pubDate,
             index: index
           });
