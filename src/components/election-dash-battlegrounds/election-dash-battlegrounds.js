@@ -17,6 +17,11 @@
         type: Array,
         value: [
           {
+            state: 'Nevada',
+            link: '2016-nevada-president-trump-vs-clinton',
+            slug: 'nv'
+          },
+          {
             state: 'North Carolina',
             link: '2016-north-carolina-president-trump-vs-clinton',
             slug: 'nc'
@@ -55,6 +60,16 @@
             state: 'Iowa',
             link: '2016-iowa-president-trump-vs-clinton',
             slug: 'ia'
+          },
+          {
+            state: 'Arizona',
+            link: '2016-arizona-president-trump-vs-clinton',
+            slug: 'az'
+          },
+          {
+            state: 'Georgia',
+            link: '2016-georgia-president-trump-vs-clinton',
+            slug: 'ga'
           }
         ],
         reflectToAttribute: true,
