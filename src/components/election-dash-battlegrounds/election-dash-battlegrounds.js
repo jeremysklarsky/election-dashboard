@@ -17,6 +17,11 @@
         type: Array,
         value: [
           {
+            state: 'New Hampshire',
+            link: '2016-new-hampshire-president-trump-vs-clinton',
+            slug: 'nh'
+          },
+          {
             state: 'Nevada',
             link: '2016-nevada-president-trump-vs-clinton',
             slug: 'nv'
