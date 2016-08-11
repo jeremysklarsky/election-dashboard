@@ -10,7 +10,8 @@
   "description": "Election Dashboard",
   "dependencies": {
     "strand": "4.0.4",
-    "underscore": "1.8.3"
+    "underscore": "1.8.3",
+    "google-feeds": "GoogleWebComponents/google-feeds#^1.0.2"
   },
   "devDependencies": {
     "web-component-tester": "4.3.1"

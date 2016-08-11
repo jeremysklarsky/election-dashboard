@@ -1,0 +1,24 @@
+<dom-module id="election-dash-article">
+  <link href="election-dash-article.css" rel="import" type="css" />
+  <template>
+    
+    <div class='card'>
+      <strand-list-item on-click="_click" id="article_{{model.index}}" class='title'>
+        <div class='article left'>
+          <div class="title">{{model.title}}</div>
+          <div class="date">{{model.date}}</div>
+        </div>
+        <div class="article right">  
+          <div class="author">{{model.author}}</div>
+        </div>
+      </strand-list-item>
+      <strand-drawer id="drawer_{{model.index}}" expanded="{{expanded}}" opened-label="Hide">
+        <div class="container">
+          <a href="{{model.link}}" target="_blank">Link</a>
+          {{model.description}}
+        </div>
+      </strand-drawer>      
+    </div>
+  </template>
+</dom-module>
+<script src="election-dash-article.js"></script>
