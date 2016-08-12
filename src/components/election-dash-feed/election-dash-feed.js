@@ -30,7 +30,7 @@
             index: index
           });
         }.bind(this));
-      }.bind(this)); 
+      }.bind(this));
     },
 
 
