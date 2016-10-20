@@ -48,9 +48,7 @@
           for (var j = 0; j < updates[i].polls.length; j++) {
             polls.push(updates[i].polls[j]);
           }
-
         }
-
         for (var p = 0; p < polls.length; p++) {
           var obj = {
             state: polls[p].state,
@@ -64,9 +62,7 @@
           obj.isClintonUp = isClintonUp(obj);
           obj.spread = findSpread(obj) + '%';
           pollData.push(obj);
-
         }
-
         grid.set('data', pollData);
       }.bind(this));
     }
