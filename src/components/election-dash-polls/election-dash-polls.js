@@ -38,23 +38,36 @@
 
     ready: function() {
       var grid = this.$.grid;
+      var polls = [];
+      var pollData = [];
       grid.set('data', []);
       this.$.recentpolls.get().then(function(data){
-        var polls = data.response;
+        var updates = data.response.updates;
         for (var i = 0; i < 50; i++) {
+          
+          for (var j = 0; j < updates[i].polls.length; j++) {
+            polls.push(updates[i].polls[j]);
+          }
+
+        }
+
+        for (var p = 0; p < polls.length; p++) {
           var obj = {
-            state: polls[i].state,
-            pollster: polls[i].pollster.slice(0,15),
-            dates: formatDates(polls[i].startDate, polls[i].endDate),
-            clinton: findByCandidate(polls[i].votingAnswers, 'Clinton'),
-            trump: findByCandidate(polls[i].votingAnswers, 'Trump'),
-            johnson: findByCandidate(polls[i].votingAnswers, 'Johnson'),
-            national: polls[i].state === 'USA'
+            state: polls[p].state,
+            pollster: polls[p].pollster.slice(0,15),
+            dates: formatDates(polls[p].startDate, polls[p].endDate),
+            clinton: findByCandidate(polls[p].votingAnswers, 'Clinton'),
+            trump: findByCandidate(polls[p].votingAnswers, 'Trump'),
+            johnson: findByCandidate(polls[p].votingAnswers, 'Johnson'),
+            national: polls[p].state === 'USA'
           };
           obj.isClintonUp = isClintonUp(obj);
           obj.spread = findSpread(obj) + '%';
-          grid.push('data', obj);
+          pollData.push(obj);
+
         }
+
+        grid.set('data', pollData);
       }.bind(this));
     }
 

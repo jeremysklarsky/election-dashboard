@@ -27,9 +27,9 @@
             handle: 'Nate_Cohn'
           },
           {
-            name: 'Robert Costa',
-            handle: 'costareports'
-          }          
+            name: 'Jeff\'s List',
+            handle: 'JRA1234567/lists/election'
+          }
         ]
       }
     }
